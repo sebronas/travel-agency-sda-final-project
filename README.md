@@ -68,3 +68,41 @@
 - think about more searching options (future)
   - budget
   - from where and to where in city
+
+### Technical stories
+- provide all available trips (user)
+  - backend
+    - create trip entity
+      - tripStartDate
+      - tripEndDate
+      - destination (class)
+        - country
+        - city
+      - price
+        - cost (BigDecimal)
+        - currency
+      - transport type (ENUM)
+        - bus, train, plane, ferry
+      - security rules:
+        - travel restrictions
+        - insurance
+      - payment method (ENUM):
+        - MONEY, CARD, TRANSFER, APPLE PAY, GOOGLE PAY, PAYPAL
+      - meal types (ENUM):
+        - Breakfasts, Lunches, Dinners, Snacks, Drinks, HB, All inclusive
+      - hotel facilities
+        - attractions (list)
+        - apartment facilities (list)
+      - list of photos URLs
+      - trip dto
+      - create TripController (REST)
+        - read all trips - paging by default (default: 10)
+        - read one trip - by id
+      - create TripService
+      - create TripRepository
+      - handle photos urls (TODO)
+    
+
+  - fronted
+    - card 
+    - some photos
