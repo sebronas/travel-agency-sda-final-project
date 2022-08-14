@@ -1,5 +1,6 @@
 package com.sda.travelagency.entity;
 
+import com.sda.travelagency.entity.enumeration.AgeRestrictions;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

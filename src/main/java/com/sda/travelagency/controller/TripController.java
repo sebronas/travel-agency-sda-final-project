@@ -1,7 +1,8 @@
 package com.sda.travelagency.controller;
 
 
-import com.sda.travelagency.entity.Trip;
+import com.sda.travelagency.converter.TripConverter;
+import com.sda.travelagency.dto.TripDto;
 import com.sda.travelagency.service.TripService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,20 +19,28 @@ public class TripController {
 
     public final TripService tripService;
 
-    public TripController(TripService tripService) {
+    public final TripConverter tripConverter;
+
+    public TripController(TripService tripService, TripConverter tripConverter) {
         this.tripService = tripService;
+        this.tripConverter = tripConverter;
     }
 
     @GetMapping
-    public List<Trip> getAllTrips() {
+    public List<TripDto> getAllTrips() {
         log.info("Getting all trips");
 
-        return tripService.findAllTrips();
+        var entities = tripService.findAllTrips();
+        return entities.stream()
+                .map(trip -> tripConverter.fromEntityToDto(trip))
+                .toList();
     }
 
     @GetMapping("/{id}")
-    public Trip getTripById(@PathVariable("id") Long id) {
+    public TripDto getTripById(@PathVariable("id") Long id) {
         log.info("Getting the trip by ID: [{}]", id);
-        return tripService.getTripById(id);
+
+        var entity = tripService.getTripById(id);
+        return tripConverter.fromEntityToDto(entity);
     }
 }

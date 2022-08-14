@@ -1,4 +1,4 @@
-package com.sda.travelagency.entity;
+package com.sda.travelagency.entity.enumeration;
 
 public enum PaymentType {
     CASH("pay with cash"),
