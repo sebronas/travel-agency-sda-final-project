@@ -16,7 +16,7 @@ public class TripService {
         return Collections.emptyList();
     }
 
-    public Trip findById(Long id) {
+    public Trip getTripById(Long id) {
         log.info("Finding Trip by Id: [{}]", id);
 
         if (id != null) {

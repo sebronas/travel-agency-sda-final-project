@@ -32,6 +32,6 @@ public class TripController {
     @GetMapping("/{id}")
     public Trip getTripById(@PathVariable("id") Long id) {
         log.info("Getting the trip by ID: [{}]", id);
-        return tripService.findById(id);
+        return tripService.getTripById(id);
     }
 }
