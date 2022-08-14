@@ -1,21 +1,21 @@
 package com.sda.travelagency.entity;
 
-public class MealType {
-    BREAKFAST("Good morning"),
+public enum MealType {
+    BREAKFAST(""),
     LUNCH(""),
     DINNER(""),
     SNACKS(""),
     DRINKS(""),
     HB(""),
-    ALL_I-NCLUSIVE("");
+    ALL_INCLUSIVE("");
 
-    public MealType(String mealDesciption) {
-        MealDesciption = mealDesciption;
+    private String mealDescription;
+
+    MealType(String mealDescription) {
+        this.mealDescription = mealDescription;
     }
 
-    private String MealDesciption;
-
-    public String getMealDesciption() {
-        return MealDesciption;
+    public String getMealDescription() {
+        return mealDescription;
     }
 }
