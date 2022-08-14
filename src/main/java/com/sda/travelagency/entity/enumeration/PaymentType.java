@@ -12,7 +12,7 @@ public enum PaymentType {
   /*  public static void main(String[] args) {
         PaymentType CASH = new PaymentType();
     }*/
-    private String description;
+    private final String description;
 
     PaymentType(String description) {
         this.description = description;
