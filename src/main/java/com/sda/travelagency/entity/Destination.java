@@ -9,4 +9,6 @@ public class Destination {
     String country;
 
     String city;
+
+    String hotelName;
 }
