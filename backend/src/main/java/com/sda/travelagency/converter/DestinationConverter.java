@@ -1,6 +1,6 @@
 package com.sda.travelagency.converter;
 
-import com.sda.travelagency.dto.DestinationDto;
+import com.dto.DestinationDto;
 import com.sda.travelagency.entity.Destination;
 import org.springframework.stereotype.Component;
 

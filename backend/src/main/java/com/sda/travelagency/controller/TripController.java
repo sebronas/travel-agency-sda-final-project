@@ -2,7 +2,7 @@ package com.sda.travelagency.controller;
 
 
 import com.sda.travelagency.converter.TripConverter;
-import com.sda.travelagency.dto.TripDto;
+import com.dto.TripDto;
 import com.sda.travelagency.service.TripService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,7 +32,7 @@ public class TripController {
 
         var entities = tripService.findAllTrips();
         return entities.stream()
-                .map(trip -> tripConverter.fromEntityToDto(trip))
+                .map(tripConverter::fromEntityToDto)
                 .toList();
     }
 
