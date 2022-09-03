@@ -35,7 +35,7 @@ public record TripDto(
 
         MealType mealType,
 
-        HotelFacilitiesDto hotelFacilities, // TODO: use dto
+        HotelFacilitiesDto hotelFacilities,
 
         List<String> photos
 
