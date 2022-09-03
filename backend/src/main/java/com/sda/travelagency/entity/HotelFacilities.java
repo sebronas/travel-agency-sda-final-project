@@ -8,7 +8,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 public class HotelFacilities {
-    List<Attraction> attractionList;
+    List<Attraction> attractions;
 
     List<String> apartmentFacilities;
 }
