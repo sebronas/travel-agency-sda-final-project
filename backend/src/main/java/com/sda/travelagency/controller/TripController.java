@@ -1,6 +1,5 @@
 package com.sda.travelagency.controller;
 
-
 import com.sda.travelagency.converter.TripConverter;
 import com.dto.TripDto;
 import com.sda.travelagency.service.TripService;
