@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TripServiceService } from './trip-service.service';
+import { TripService } from './trip.service';
 
-describe('TripServiceService', () => {
-  let service: TripServiceService;
+describe('TripService', () => {
+  let service: TripService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(TripServiceService);
+    service = TestBed.inject(TripService);
   });
 
   it('should be created', () => {
