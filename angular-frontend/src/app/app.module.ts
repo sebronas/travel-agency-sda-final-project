@@ -6,6 +6,7 @@ import { TripListComponent } from './components/trip-list/trip-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from "@angular/material/card";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
