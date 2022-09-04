@@ -1,6 +1,6 @@
 package com.sda.travelagency.converter;
 
-import com.dto.SecurityRulesDto;
+import com.sda.travelagency.dto.SecurityRulesDto;
 import com.sda.travelagency.entity.SecurityRules;
 import org.springframework.stereotype.Component;
 

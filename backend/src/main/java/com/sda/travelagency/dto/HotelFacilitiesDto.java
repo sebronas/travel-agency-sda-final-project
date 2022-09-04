@@ -1,4 +1,4 @@
-package com.dto;
+package com.sda.travelagency.dto;
 
 import java.util.List;
 
