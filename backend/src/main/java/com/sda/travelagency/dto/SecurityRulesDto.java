@@ -1,5 +1,5 @@
 package com.sda.travelagency.dto;
 
-public record SecurityRulesDto(String travelRestrictions, String insurance) {
+public record SecurityRulesDto(Long id, String travelRestrictions, String insurance) {
 
 }

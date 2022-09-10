@@ -9,11 +9,11 @@ public class SecurityRulesConverter implements Converter<SecurityRules, Security
 
     @Override
     public SecurityRulesDto fromEntityToDto(SecurityRules entity) {
-        return new SecurityRulesDto(entity.getTravelRestrictions(), entity.getInsurance());
+        return new SecurityRulesDto(entity.getId(), entity.getTravelRestrictions(), entity.getInsurance());
     }
 
     @Override
     public SecurityRules fromDtoToEntity(SecurityRulesDto dto) {
-        return new SecurityRules(dto.travelRestrictions(), dto.insurance());
+        return new SecurityRules(dto.id(), dto.travelRestrictions(), dto.insurance());
     }
 }

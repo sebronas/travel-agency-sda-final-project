@@ -14,6 +14,7 @@ import java.util.List;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder
 @Entity
+@Table(name = "TRIPS")
 public class Trip {
 
     @Id
@@ -27,13 +28,14 @@ public class Trip {
     @Transient //ignore that field (temporary)
     Destination destination;
 
-    @Transient //ignore that field (temporary)
+    // @Transient //ignore that field (temporary)
+    @Embedded
     Price tripPrice;
 
-    @Enumerated(value = EnumType.STRING)
+    @Enumerated(value = EnumType.STRING) // by default - ordinal, and that means it will creat integers, not strings
     TransportType typeOfTransport;
 
-    @Transient //ignore that field (temporary)
+    @OneToOne
     SecurityRules securityRules;
 
     @Enumerated(value = EnumType.STRING)
