@@ -10,13 +10,15 @@ import {MatButtonModule} from "@angular/material/button";
 import { HeaderComponent } from './components/header/header.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import { AboutusComponent } from './components/aboutus/aboutus.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TripListComponent,
     HeaderComponent,
-    NavigationComponent
+    NavigationComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,
