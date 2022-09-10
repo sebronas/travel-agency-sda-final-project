@@ -47,7 +47,7 @@ public class Trip {
     @Transient //ignore that field (temporary)
     HotelFacilities hotelFacilities;
 
-    @Transient //ignore that field (temporary)
+    @ElementCollection // it will create different tables for those photos - we used it, because we aren't able to config List<String>
     List<String> photos;
 
 
