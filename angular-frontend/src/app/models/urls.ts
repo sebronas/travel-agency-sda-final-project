@@ -5,3 +5,9 @@ const allTripsUrlJavaWay: string = serverUrl +  '/api/trips'
 
 // with backticks to use ${...}
 export const allTripsUrl: string = `${serverUrl}/api/trips`
+
+// internal links
+export const homeUrl = 'home'
+export const defaultUrl = ''
+export const tripsUrl = 'all-trips'
+export const aboutUsUrl = 'about-us'
