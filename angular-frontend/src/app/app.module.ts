@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
     TripListComponent,
     HeaderComponent,
     NavigationComponent,
-    AboutusComponent
+    AboutusComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
