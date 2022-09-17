@@ -36,7 +36,7 @@ public class HotelFacilitiesConverter implements Converter<HotelFacilities, Hote
                 .map(attractionConverter::fromEntityToDto)
                 .toList();
 
-        return new HotelFacilitiesDto(attractionsDtos, entity.getApartmentFacilities());
+        return new HotelFacilitiesDto(entity.getId(), attractionsDtos, entity.getApartmentFacilities());
     }
 
     @Override
@@ -46,6 +46,6 @@ public class HotelFacilitiesConverter implements Converter<HotelFacilities, Hote
                 .map(attractionConverter::fromDtoToEntity)
                 .toList();
 
-        return new HotelFacilities(entities, dto.apartmentFacilities());
+        return new HotelFacilities(dto.id(), entities, dto.apartmentFacilities());
     }
 }

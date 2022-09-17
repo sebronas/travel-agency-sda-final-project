@@ -52,7 +52,7 @@ public class FakeTripRepository implements CrudRepository<Trip, Long> {
                         .securityRules(new SecurityRules(1L ,"", ""))
                         .paymentType(PaymentType.PAYPAL)
                         .mealType(MealType.ALL_INCLUSIVE)
-                        .hotelFacilities(new HotelFacilities(List.of(), List.of("bathroom", "bed", "swimming pool")))
+                        .hotelFacilities(new HotelFacilities(1L, List.of(), List.of("bathroom", "bed", "swimming pool")))
                         .photos(List.of("https://fastly.4sqi.net/img/general/600x600/1376806605_Hc3gxR3iMMI5OKRpt7ook-zGGreT4XxgEapWx0wC844.jpg"))
                         .build(),
                 Trip.builder()
@@ -64,7 +64,7 @@ public class FakeTripRepository implements CrudRepository<Trip, Long> {
                         .securityRules(new SecurityRules(2L, "",""))
                         .paymentType(PaymentType.CARD)
                         .mealType(MealType.ALL_INCLUSIVE)
-                        .hotelFacilities(new HotelFacilities(List.of(), List.of("Bed", "Swiming Pool", "Bathroom", "Parking")))
+                        .hotelFacilities(new HotelFacilities(2L, List.of(), List.of("Bed", "Swiming Pool", "Bathroom", "Parking")))
                         .photos(List.of("https://i.pinimg.com/originals/e2/56/27/e256274d9921a731f36f25fbcf200ea3.jpg"))
                         .build()
         );

@@ -44,13 +44,13 @@ public class Trip {
     @Enumerated(value = EnumType.STRING)
     MealType mealType;
 
-    @Transient //ignore that field (temporary)
+    @OneToOne
     HotelFacilities hotelFacilities;
 
     // TODO: Change table name
     @ElementCollection // it will create different tables for those photos - we used it, because we aren't able to config List<String>
     @CollectionTable(name = "PHOTOS") // this annotation is for just change table name
-    @Column(name = "photo")
+    @Column(name = "PHOTO")
     List<String> photos;
 
 
