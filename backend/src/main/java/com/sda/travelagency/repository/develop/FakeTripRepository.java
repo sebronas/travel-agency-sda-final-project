@@ -1,23 +1,35 @@
-package com.sda.travelagency.repository;
+package com.sda.travelagency.repository.develop;
 
 import com.sda.travelagency.entity.*;
 import com.sda.travelagency.entity.enumeration.MealType;
 import com.sda.travelagency.entity.enumeration.PaymentType;
 import com.sda.travelagency.entity.enumeration.TransportType;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Profile;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.query.FluentQuery;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Function;
 
 // TripRepository bean will be created only when "develop" profile is activated
 // useful for development purposes
 @Profile("develop")
 @Repository
-public class FakeTripRepository implements CrudRepository<Trip, Long> {
+@Slf4j
+public class FakeTripRepository implements JpaRepository<Trip, Long> {
+
+    public FakeTripRepository(){
+        log.info("Fake Trip Repository bean was created!");
+    }
 
     @Override
     public <S extends Trip> S save(S entity) {
@@ -25,7 +37,87 @@ public class FakeTripRepository implements CrudRepository<Trip, Long> {
     }
 
     @Override
-    public <S extends Trip> Iterable<S> saveAll(Iterable<S> entities) {
+    public <S extends Trip> List<S> saveAll(Iterable<S> entities) {
+        return null;
+    }
+
+    @Override
+    public void flush() {
+
+    }
+
+    @Override
+    public <S extends Trip> S saveAndFlush(S entity) {
+        return null;
+    }
+
+    @Override
+    public <S extends Trip> List<S> saveAllAndFlush(Iterable<S> entities) {
+        return null;
+    }
+
+    @Override
+    public void deleteAllInBatch(Iterable<Trip> entities) {
+
+    }
+
+    @Override
+    public void deleteAllByIdInBatch(Iterable<Long> longs) {
+
+    }
+
+    @Override
+    public void deleteAllInBatch() {
+
+    }
+
+    @Override
+    public Trip getOne(Long aLong) {
+        return null;
+    }
+
+    @Override
+    public Trip getById(Long aLong) {
+        return null;
+    }
+
+    @Override
+    public Trip getReferenceById(Long aLong) {
+        return null;
+    }
+
+    @Override
+    public <S extends Trip> Optional<S> findOne(Example<S> example) {
+        return Optional.empty();
+    }
+
+    @Override
+    public <S extends Trip> List<S> findAll(Example<S> example) {
+        return null;
+    }
+
+    @Override
+    public <S extends Trip> List<S> findAll(Example<S> example, Sort sort) {
+        return null;
+    }
+
+    @Override
+    public <S extends Trip> Page<S> findAll(Example<S> example, Pageable pageable) {
+        return null;
+    }
+
+    @Override
+    public <S extends Trip> long count(Example<S> example) {
+        return 0;
+    }
+
+    @Override
+    public <S extends Trip> boolean exists(Example<S> example) {
+        return false;
+    }
+
+    @Override
+    public <S extends Trip, R> R findBy(Example<S> example, Function<FluentQuery.FetchableFluentQuery<S>, R> queryFunction) {
         return null;
     }
 
@@ -71,7 +163,17 @@ public class FakeTripRepository implements CrudRepository<Trip, Long> {
     }
 
     @Override
-    public Iterable<Trip> findAllById(Iterable<Long> longs) {
+    public List<Trip> findAll(Sort sort) {
+        return null;
+    }
+
+    @Override
+    public Page<Trip> findAll(Pageable pageable) {
+        return null;
+    }
+
+    @Override
+    public List<Trip> findAllById(Iterable<Long> longs) {
         return null;
     }
 

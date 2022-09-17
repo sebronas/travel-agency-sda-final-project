@@ -2,8 +2,8 @@ package com.sda.travelagency.service;
 
 import com.sda.travelagency.entity.Trip;
 import com.sda.travelagency.exception.TripNotFoundException;
-import com.sda.travelagency.repository.RealTripRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,9 +12,9 @@ import java.util.List;
 @Slf4j
 public class TripService {
 
-    private final RealTripRepository tripRepository;
+    private final JpaRepository<Trip, Long> tripRepository;
 
-    public TripService(RealTripRepository tripRepository) {
+    public TripService(JpaRepository<Trip, Long> tripRepository) {
         this.tripRepository = tripRepository;
     }
 
