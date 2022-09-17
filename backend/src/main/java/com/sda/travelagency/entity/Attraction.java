@@ -20,10 +20,11 @@ public class Attraction {
 
     String description;
 
+    @Enumerated(EnumType.STRING)
     AgeRestrictions ageRestrictions;
 
     @ElementCollection
     @CollectionTable(name = "ATTRACTION_PHOTOS")
-    @Column(name = "photos")
+    @Column(name = "PHOTO")
     List<String> photos;
 }

@@ -18,7 +18,7 @@ public class HotelFacilities {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @Transient
+    @OneToMany
     List<Attraction> attractions;
 
     @ElementCollection
