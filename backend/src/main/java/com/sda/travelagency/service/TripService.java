@@ -1,10 +1,12 @@
 package com.sda.travelagency.service;
 
 import com.sda.travelagency.entity.Trip;
+import com.sda.travelagency.exception.TripAlreadyExistsException;
 import com.sda.travelagency.exception.TripNotFoundException;
+import com.sda.travelagency.repository.TripRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -12,9 +14,9 @@ import java.util.List;
 @Slf4j
 public class TripService {
 
-    private final JpaRepository<Trip, Long> tripRepository;
+    private final TripRepository tripRepository;
 
-    public TripService(JpaRepository<Trip, Long> tripRepository) {
+    public TripService(TripRepository tripRepository) {
         this.tripRepository = tripRepository;
     }
 
@@ -30,5 +32,22 @@ public class TripService {
             throw new TripNotFoundException("No trip with id: " + id);
         }
         return null;
+    }
+
+    @Transactional // every sql will be treated as atomic changes
+    public Trip createNewTrip(Trip newTrip) {
+        log.info("Creating new trip: [{}]", newTrip);
+        // +log data
+        // +store into datasource
+        // validate fields of newTrip
+        // validate duplicates
+
+        if (tripRepository.isDuplicateOfOther(newTrip)) {
+            throw new TripAlreadyExistsException("TRIP ALREADY EXISTS!!!!");
+        }
+
+        Trip saved = tripRepository.save(newTrip);
+        log.info("after saving: [{}}", saved);
+        return saved;
     }
 }

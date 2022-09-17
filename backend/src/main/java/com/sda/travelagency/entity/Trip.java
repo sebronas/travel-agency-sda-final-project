@@ -47,7 +47,8 @@ public class Trip {
     @OneToOne
     HotelFacilities hotelFacilities;
 
-    @ElementCollection // it will create different tables for those photos - we used it, because we aren't able to config List<String>
+    @ElementCollection
+    // it will create different tables for those photos - we used it, because we aren't able to config List<String>
     @CollectionTable(name = "PHOTOS" /* this annotation is for just change table name */, joinColumns = @JoinColumn(name = "ID_OF_TRIP"))
     // TODO: video after lunch - explanation / for revising
     @Column(name = "PHOTO")
