@@ -2,7 +2,7 @@ package com.sda.travelagency.service;
 
 import com.sda.travelagency.entity.Trip;
 import com.sda.travelagency.exception.TripNotFoundException;
-import com.sda.travelagency.repository.FakeTripRepository;
+import com.sda.travelagency.repository.RealTripRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -12,9 +12,9 @@ import java.util.List;
 @Slf4j
 public class TripService {
 
-    private final FakeTripRepository tripRepository;
+    private final RealTripRepository tripRepository;
 
-    public TripService(FakeTripRepository tripRepository) {
+    public TripService(RealTripRepository tripRepository) {
         this.tripRepository = tripRepository;
     }
 
