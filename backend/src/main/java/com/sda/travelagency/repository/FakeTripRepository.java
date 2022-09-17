@@ -17,7 +17,7 @@ import java.util.Optional;
 // useful for development purposes
 @Profile("develop")
 @Repository
-public class TripRepository implements CrudRepository<Trip, Long> {
+public class FakeTripRepository implements CrudRepository<Trip, Long> {
 
     @Override
     public <S extends Trip> S save(S entity) {
