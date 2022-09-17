@@ -25,10 +25,10 @@ public class Trip {
 
     LocalDate tripEndDate;
 
-    @Transient //ignore that field (temporary)
+    //@Transient //ignore that field (temporary)
+    @OneToOne
     Destination destination;
 
-    // @Transient //ignore that field (temporary)
     @Embedded
     Price tripPrice;
 
@@ -50,6 +50,7 @@ public class Trip {
     // TODO: Change table name
     @ElementCollection // it will create different tables for those photos - we used it, because we aren't able to config List<String>
     @CollectionTable(name = "PHOTOS") // this annotation is for just change table name
+    @Column(name = "photo")
     List<String> photos;
 
 

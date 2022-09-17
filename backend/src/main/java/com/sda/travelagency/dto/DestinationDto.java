@@ -1,5 +1,5 @@
 package com.sda.travelagency.dto;
 
-public record DestinationDto(String country, String city, String hotelName) {
+public record DestinationDto(Long id, String country, String city, String hotelName) {
 
 }
