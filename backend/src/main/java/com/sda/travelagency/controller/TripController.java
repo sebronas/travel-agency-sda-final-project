@@ -6,6 +6,7 @@ import com.sda.travelagency.service.TripService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 // TODO: fix CrossOrigin better way
@@ -43,7 +44,7 @@ public class TripController {
     }
 
     @PostMapping
-    public TripDto createNewTrip(@RequestBody TripDto newTrip) {
+    public TripDto createNewTrip(@Valid @RequestBody TripDto newTrip) {
         log.info("Trying to create new trip: [{}]", newTrip);
 
         // convert dto to entity
