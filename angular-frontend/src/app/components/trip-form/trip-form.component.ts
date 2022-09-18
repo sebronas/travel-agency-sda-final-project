@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {TripService} from "../../services/trip-service/trip.service";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-trip-form',
@@ -7,7 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TripFormComponent implements OnInit {
 
-  constructor() { }
+  tripForm = new FormGroup({
+    tripStartDate: new FormControl('')
+  })
+
+  submitData() {
+    console.log("sending data")
+    console.log(JSON.stringify(this.tripService))
+  }
+
+  constructor(private tripService: TripService) { }
 
   ngOnInit(): void {
   }

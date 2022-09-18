@@ -1,1 +1,7 @@
-<p>trip-form works!</p>
+<h2>Creating new TRIP!</h2>
+
+<form [formGroup]="tripForm" (ngSubmit)="submitData()" >
+  <label for="tripStart">Trip start date</label>
+  <input id="tripStart" type="text" formControlName="tripStartDate">
+  <input type="submit">
+</form>

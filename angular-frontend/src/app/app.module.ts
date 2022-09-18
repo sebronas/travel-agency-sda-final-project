@@ -13,10 +13,11 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {AboutusComponent} from './components/aboutus/aboutus.component';
 import {HomeComponent} from './components/home/home.component';
 import {RouterModule} from "@angular/router";
-import {aboutUsUrl, defaultUrl, homeUrl, notFoundUrl, tripsUrl} from "./models/urls";
+import {aboutUsUrl, defaultUrl, homeUrl, newTripUrl, notFoundUrl, tripsUrl} from "./models/urls";
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import {MatIconModule} from "@angular/material/icon";
 import { TripFormComponent } from './components/trip-form/trip-form.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -41,9 +42,11 @@ import { TripFormComponent } from './components/trip-form/trip-form.component';
       {path: homeUrl, component: HomeComponent},
       {path: aboutUsUrl, component: AboutusComponent},
       {path: tripsUrl, component: TripListComponent},
+      {path: newTripUrl, component: TripFormComponent},
       {path: notFoundUrl, component: NotFoundComponent}
     ]),
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
