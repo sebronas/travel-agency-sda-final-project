@@ -16,6 +16,7 @@ import {RouterModule} from "@angular/router";
 import {aboutUsUrl, defaultUrl, homeUrl, notFoundUrl, tripsUrl} from "./models/urls";
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import {MatIconModule} from "@angular/material/icon";
+import { TripFormComponent } from './components/trip-form/trip-form.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {MatIconModule} from "@angular/material/icon";
     NavigationComponent,
     AboutusComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    TripFormComponent
   ],
   imports: [
     BrowserModule,
