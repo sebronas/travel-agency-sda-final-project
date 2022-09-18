@@ -26,7 +26,7 @@ public class Trip {
     LocalDate tripEndDate;
 
     //@Transient //ignore that field (temporary)
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     Destination destination;
 
     @Embedded
@@ -35,7 +35,7 @@ public class Trip {
     @Enumerated(value = EnumType.STRING) // by default - ordinal, and that means it will creat integers, not strings
     TransportType typeOfTransport;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     SecurityRules securityRules;
 
     @Enumerated(value = EnumType.STRING)
@@ -44,7 +44,7 @@ public class Trip {
     @Enumerated(value = EnumType.STRING)
     MealType mealType;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     HotelFacilities hotelFacilities;
 
     @ElementCollection
