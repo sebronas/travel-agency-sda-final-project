@@ -5,6 +5,7 @@ import com.sda.travelagency.entity.enumeration.PaymentType;
 import com.sda.travelagency.entity.enumeration.TransportType;
 import lombok.Builder;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
@@ -19,6 +20,7 @@ public record TripDto(
         @Future
         LocalDate tripEndDate,
 
+        @Valid
         @NotNull
         DestinationDto destination,
         // Inside dto field can have even different type

@@ -4,6 +4,7 @@ import com.sda.travelagency.converter.TripConverter;
 import com.sda.travelagency.dto.TripDto;
 import com.sda.travelagency.service.TripService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -43,6 +44,8 @@ public class TripController {
         return tripConverter.fromEntityToDto(entity);
     }
 
+
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public TripDto createNewTrip(@Valid @RequestBody TripDto newTrip) {
         log.info("Trying to create new trip: [{}]", newTrip);

@@ -3,11 +3,12 @@ package com.sda.travelagency.dto;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+
 public record DestinationDto(
         Long id,
 
-        @NotNull
         @Size(min = 4)
+        @NotNull
         String country,
 
         @NotNull
